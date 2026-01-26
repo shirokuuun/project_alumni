@@ -3,28 +3,33 @@ import flagIcon from '../../assets/flag.svg';
 import clockIcon from '../../assets/clock.svg';
 import refreshIcon from '../../assets/loading.svg';
 import star from '../../assets/star.svg';
-import user from '../../assets/user.svg'
+import user from '../../assets/user.svg';
 
 export default function RequestMentorship() {
   return (
     <div className="flex min-h-screen bg-gray-100 font-sans">
       
+      {/* Sidebar */}
       <aside className="hidden md:block w-64 bg-[#52525b] flex-shrink-0">
       </aside>
 
+      {/* Main Content Wrapper */}
       <div className="flex-1 flex flex-col min-w-0">
         
         {/* Header */}
         <header className="h-16 bg-[#787130] flex items-center justify-between px-4 md:px-8 shadow-md">
         </header>
 
+        {/* Main Content */}
         <main className="flex-1 p-4 md:p-8 overflow-y-auto">
           
+          {/* Page Title & Description */}
           <h1 className="text-2xl md:text-3xl font-bold text-gray-900">Request Mentorship</h1>
           <p className="text-gray-500 mt-1 italic text-sm">Send a request to your chosen mentor and start your mentorship journey.</p>
 
           <div className="mt-6 space-y-6 max-w-4xl">
             
+            {/* Mentor Summary Card */}
             <div className="bg-white p-4 md:p-6 rounded-xl shadow-sm border border-gray-200">
               <h2 className="text-lg font-bold text-gray-800 mb-4">Mentor Summary</h2>
               
@@ -39,6 +44,7 @@ export default function RequestMentorship() {
                   <h3 className="text-2xl font-bold text-gray-900">Bill Gates</h3>
                   <p className="text-sm text-gray-600 font-medium">Technology & Entrepreneurship</p>
                   
+                  {/* Stats Row */}
                   <div className="flex flex-wrap justify-center md:justify-start gap-4 mt-3 text-xs font-medium text-gray-500">
                     <div className="flex items-center gap-1"><img src={flagIcon} alt="Flag" className="w-3 h-3" /> Co-founder & Former CEO</div>
                     <div className="flex items-center gap-1"><img src={clockIcon} alt="Clock" className="w-3 h-3" /> 20 yrs Experience</div>
@@ -46,6 +52,7 @@ export default function RequestMentorship() {
                     <div className="flex items-center gap-1 "><img src={star} alt="Star" className="w-4 h-4" /> Top Mentor</div>
                   </div>
 
+                  {/* Skills Tags */}
                   <div className="flex flex-wrap justify-center md:justify-start gap-2 mt-4">
                     {["Python", "JavaScript", "HTML", "PHP", "Laravel"].map((skill) => (
                       <span key={skill} className="px-3 py-1 bg-gray-200 text-[#787130] text-xs font-semibold rounded-full border border-[#787130]-300">
@@ -57,11 +64,13 @@ export default function RequestMentorship() {
               </div>
             </div>
 
+            {/* Request Form Card */}
             <div className="bg-white p-4 md:p-6 rounded-xl shadow-sm border border-gray-200">
               <h2 className="text-lg font-bold text-gray-800 mb-6">Request Form</h2>
               
               <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 
+                {/* Mentorship Goal Input */}
                 <div className="flex flex-col gap-2">
                   <label className="text-xs font-bold text-gray-800">Mentorship Goal</label>
                   <select className="w-full p-3 bg-gray-100 rounded-lg text-sm border border-black focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500 outline-none text-gray-700 appearance-none">
@@ -71,6 +80,7 @@ export default function RequestMentorship() {
                   </select>
                 </div>
 
+                {/* Preferred Schedule Input */}
                 <div className="flex flex-col gap-2">
                   <label className="text-xs font-bold text-gray-800">Preferred Schedule</label>
                   <div className="relative w-full">
@@ -81,6 +91,7 @@ export default function RequestMentorship() {
                   </div>
                 </div>
 
+                {/* Session Type Input */}
                 <div className="flex flex-col gap-2 md:col-span-1">
                   <label className="text-xs font-bold text-gray-800">Session Type</label>
                   <select className="w-full p-3 bg-gray-100 rounded-lg text-sm border border-black focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500 outline-none text-gray-700 appearance-none">
@@ -90,6 +101,7 @@ export default function RequestMentorship() {
                   </select>
                 </div>
                 
+                {/* Message Input */}
                 <div className="flex flex-col gap-2 md:col-span-2">
                   <label className="text-xs font-bold text-gray-800">Message to Mentor</label>
                   <textarea 
@@ -99,6 +111,7 @@ export default function RequestMentorship() {
                   ></textarea>
                 </div>
 
+                {/* Submit Button */}
                 <div className="md:col-span-2 flex justify-end">
                     <button 
                     type="button" 
