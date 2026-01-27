@@ -6,8 +6,8 @@ import Mentorship from "./pages/Mentorship";
 import MentorFinderUI from "./pages/MentorFinder";
 
 // Collaborator's imports
-import MentorshipProgram from "./pages/mentor-techies/mentor.jsx";
-import RequestMentorship from "./pages/request-page/request-form.jsx";
+import MentorSignUp from "./pages/mentor-signup/Mentor.jsx";
+import RequestMentorship from "./pages/request-page/Request-form.jsx";
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
         <Route path="/finder" element={<MentorFinderUI />} />
 
         {/* Collaborator's Pages */}
-        <Route path="/program" element={<MentorshipProgram />} />
+        <Route path="/program" element={<MentorSignUp />} />
         <Route path="/request" element={<RequestMentorship />} />
       </Routes>
     </Router>
