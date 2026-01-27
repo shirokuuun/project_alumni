@@ -1,7 +1,13 @@
-import MentorshipProgram from './pages/Mentorship';
+import MentorshipProgram from "./pages/Mentorship";
+import MentorFinder from "./pages/MentorFinder";
 
 function App() {
-  return <MentorshipProgram />
+  return (
+    <>
+      <MentorshipProgram />
+      <MentorFinder />
+    </>
+  );
 }
 
-export default App
+export default App;
