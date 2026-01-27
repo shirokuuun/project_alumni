@@ -14,6 +14,7 @@ import {
   X,
 } from "lucide-react";
 import hsiLogo from "../assets/hsi.png";
+import { Link } from "react-router-dom";
 
 const MentorFinderUI = () => {
   const [activeNav, setActiveNav] = useState("Mentorship & Volunteer Programs");
@@ -285,9 +286,11 @@ const MentorFinderUI = () => {
                   </div>
 
                   <div className="flex flex-col sm:flex-row gap-2">
-                    <button className="flex-1 py-2 px-3 bg-yellow-600 hover:bg-yellow-700 text-white text-sm font-medium rounded whitespace-nowrap">
-                      Request Mentorship
-                    </button>
+                    <Link to="/request">
+                      <button className="flex-1 py-2 px-3 bg-yellow-600 hover:bg-yellow-700 text-white text-sm font-medium rounded whitespace-nowrap">
+                        Request Mentorship
+                      </button>
+                    </Link>
                     <button className="flex-1 py-2 px-3 bg-yellow-600 hover:bg-yellow-700 text-white text-sm font-medium rounded whitespace-nowrap">
                       View Profile
                     </button>
