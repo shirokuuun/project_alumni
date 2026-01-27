@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // 1. Import Link
+import { Link } from 'react-router-dom'; 
 import flagIcon from '../../assets/flag.svg';
 import clockIcon from '../../assets/clock.svg';
 import refreshIcon from '../../assets/loading.svg';
@@ -17,14 +17,13 @@ export default function RequestMentorship() {
       {/* Main Content Wrapper */}
       <div className="flex-1 flex flex-col min-w-0">
         
-        {/* Header - UPDATED WITH NAVIGATION BUTTON */}
+        {/* Header */}
         <header className="h-16 bg-[#787130] flex items-center justify-between px-4 md:px-8 shadow-md">
-            <span className="text-white font-bold text-lg">Student Dashboard</span>
             
             {/* Button to Navigate to Mentorship Program (TEMPORARY BUTTON) */}
             <Link to="/program">
                 <button className="px-4 py-2 bg-white text-[#787130] text-sm font-bold rounded-lg shadow-sm hover:bg-yellow-50 transition">
-                  View Mentorship Site
+                  TEMP: View Mentorship Site
                 </button>
             </Link>
         </header>
