@@ -4,6 +4,7 @@ import "./index.css";
 // Your imports
 import Mentorship from "./pages/Mentorship";
 import MentorFinderUI from "./pages/MentorFinder";
+import VolunteerPrograms from "./pages/volunteer-programs/VolunteerPrograms"; // Import the new page
 
 // Collaborator's imports
 import MentorshipProgram from "./pages/mentor-techies/mentor.jsx";
@@ -18,6 +19,9 @@ function App() {
 
         {/* The Finder/Directory Page */}
         <Route path="/finder" element={<MentorFinderUI />} />
+        
+        {/* Volunteer Programs Page */}
+        <Route path="/VolunteerPrograms" element={<VolunteerPrograms />} />
 
         {/* Collaborator's Pages */}
         <Route path="/program" element={<MentorshipProgram />} />

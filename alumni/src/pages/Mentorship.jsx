@@ -179,6 +179,14 @@ const Mentorship = () => {
       {/* Placeholder for Navbar - RESPONSIVE */}
       <div className="h-14 sm:h-16 bg-yellow-700 flex items-center justify-between px-4 sm:px-6">
         <div className="text-white font-semibold text-sm sm:text-base">NAVBAR PLACEHOLDER</div>
+        
+        {/* --- TEMPORARY BUTTON ADDED HERE --- */}
+        <button
+            onClick={() => navigate("/VolunteerPrograms")}
+            className="bg-white text-yellow-800 hover:bg-gray-100 px-4 py-2 rounded-lg text-xs sm:text-sm font-bold shadow-md transition-all duration-300"
+        >
+            Volunteer Programs
+        </button>
       </div>
 
       <div className="flex flex-col lg:flex-row">
