@@ -182,11 +182,7 @@ const MentorFinderUI = () => {
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden shrink-0">
-                <img
-                  src="/pages/assets/billGates.jpg"
-                  alt="User"
-                  className="w-full h-full object-cover"
-                />
+                <img src="" alt="User" className="w-full h-full object-cover" />
               </div>
               <div className="text-white hidden sm:block">
                 <div className="text-xs font-semibold">MARK ZUCKERBERG</div>
