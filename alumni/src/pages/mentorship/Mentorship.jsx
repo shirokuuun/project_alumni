@@ -113,16 +113,16 @@ const Mentorship = () => {
       const cardWidth = 300; // Width of one card
       const gap = 24; // Gap between cards (gap-6 = 24px)
       const scrollAmount = cardWidth + gap;
-      
+
       const maxScroll = container.scrollWidth - container.clientWidth;
       const currentScroll = container.scrollLeft;
-      
+
       if (direction === "left") {
         const newScroll = currentScroll - scrollAmount;
-        
+
         // If we're at the beginning, jump to the middle section
         if (newScroll <= 0) {
-          const middlePosition = (container.scrollWidth / 3);
+          const middlePosition = container.scrollWidth / 3;
           container.scrollLeft = middlePosition;
           setTimeout(() => {
             container.scrollTo({
@@ -138,10 +138,10 @@ const Mentorship = () => {
         }
       } else {
         const newScroll = currentScroll + scrollAmount;
-        
+
         // If we're near the end, jump back to the middle section
         if (newScroll >= maxScroll) {
-          const middlePosition = (container.scrollWidth / 3);
+          const middlePosition = container.scrollWidth / 3;
           container.scrollLeft = middlePosition;
           setTimeout(() => {
             container.scrollTo({
@@ -161,12 +161,12 @@ const Mentorship = () => {
 
   // Handle mentor card click
   const handleMentorClick = () => {
-    navigate("/request-form");
+    navigate("/request");
   };
 
   // Handle explore all click
   const handleExploreAll = () => {
-    navigate("/MentorFinder");
+    navigate("/finder");
   };
 
   // Handle card navigation
@@ -178,13 +178,17 @@ const Mentorship = () => {
     <div className="min-h-screen bg-gray-100">
       {/* Placeholder for Navbar - RESPONSIVE */}
       <div className="h-14 sm:h-16 bg-yellow-700 flex items-center justify-between px-4 sm:px-6">
-        <div className="text-white font-semibold text-sm sm:text-base">NAVBAR PLACEHOLDER</div>
+        <div className="text-white font-semibold text-sm sm:text-base">
+          NAVBAR PLACEHOLDER
+        </div>
       </div>
 
       <div className="flex flex-col lg:flex-row">
         {/* Placeholder for Sidebar - RESPONSIVE */}
         <div className="w-full lg:w-64 bg-gray-800 min-h-0 lg:min-h-screen">
-          <div className="text-white p-4 sm:p-6 text-sm sm:text-base">SIDEBAR PLACEHOLDER</div>
+          <div className="text-white p-4 sm:p-6 text-sm sm:text-base">
+            SIDEBAR PLACEHOLDER
+          </div>
         </div>
 
         {/* Main Content */}
@@ -258,8 +262,15 @@ const Mentorship = () => {
               {/* Right side - 2x2 grid of cards - RESPONSIVE */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 {/* Be a Mentor */}
-                <div className="bg-white p-5 sm:p-6 rounded-xl sm:rounded-2xl border-2 border-gray-200 shadow-sm">
-                  <h3 className="font-bold text-base sm:text-lg mb-2 sm:mb-3">Be a Mentor</h3>
+                <div
+                  className="bg-white p-5 sm:p-6 rounded-xl sm:rounded-2xl border-2 border-gray-200 shadow-sm cursor-pointer transition-all duration-300 hover:shadow-lg hover:scale-105 hover:border-gray-400"
+                  onClick={() => handleCardClick("/becomeMentor")}
+                  onMouseEnter={() => setHoveredCard("find")}
+                  onMouseLeave={() => setHoveredCard(null)}
+                >
+                  <h3 className="font-bold text-base sm:text-lg mb-2 sm:mb-3">
+                    Be a Mentor
+                  </h3>
                   <p className="text-gray-700 text-sm leading-relaxed mb-3 sm:mb-4">
                     Share your experience, guide juniors, and give back to the
                     HSI community by mentoring interns and alumni.
@@ -282,7 +293,9 @@ const Mentorship = () => {
                   onMouseEnter={() => setHoveredCard("find")}
                   onMouseLeave={() => setHoveredCard(null)}
                 >
-                  <h3 className="font-bold text-base sm:text-lg mb-2 sm:mb-3">Find a Mentor</h3>
+                  <h3 className="font-bold text-base sm:text-lg mb-2 sm:mb-3">
+                    Find a Mentor
+                  </h3>
                   <p className="text-gray-700 text-sm leading-relaxed mb-3 sm:mb-4">
                     Get matched with experienced professionals based on your
                     goals, skills, and career path.
@@ -294,17 +307,22 @@ const Mentorship = () => {
                     style={{ backgroundColor: "#E6C72E" }}
                   >
                     <ArrowRight
-                      className={`w-4 h-4 sm:w-5 sm:h-5 text-white transition-transform duration-300 ${
-                        hoveredCard === "find" ? "translate-x-1" : ""
-                      }`}
+                      className="w-4 h-4 sm:w-5 sm:h-5 text-white"
                       strokeWidth={3}
                     />
                   </div>
                 </div>
 
                 {/* Volunteer & Speak */}
-                <div className="bg-white p-5 sm:p-6 rounded-xl sm:rounded-2xl border-2 border-gray-200 shadow-sm">
-                  <h3 className="font-bold text-base sm:text-lg mb-2 sm:mb-3">Volunteer & Speak</h3>
+                <div
+                  className="bg-white p-5 sm:p-6 rounded-xl sm:rounded-2xl border-2 border-gray-200 shadow-sm cursor-pointer transition-all duration-300 hover:shadow-lg hover:scale-105 hover:border-gray-400"
+                  onClick={() => handleCardClick("/finder")}
+                  onMouseEnter={() => setHoveredCard("schedule")}
+                  onMouseLeave={() => setHoveredCard(null)}
+                >
+                  <h3 className="font-bold text-base sm:text-lg mb-2 sm:mb-3">
+                    Volunteer & Speak
+                  </h3>
                   <p className="text-gray-700 text-sm leading-relaxed mb-3 sm:mb-4">
                     Join outreach programs, tech talks, and advocacy events as a
                     volunteer or speaker.
@@ -327,7 +345,9 @@ const Mentorship = () => {
                   onMouseEnter={() => setHoveredCard("schedule")}
                   onMouseLeave={() => setHoveredCard(null)}
                 >
-                  <h3 className="font-bold text-base sm:text-lg mb-2 sm:mb-3">Schedule Sessions</h3>
+                  <h3 className="font-bold text-base sm:text-lg mb-2 sm:mb-3">
+                    Schedule Sessions
+                  </h3>
                   <p className="text-gray-700 text-sm leading-relaxed mb-3 sm:mb-4">
                     Book virtual or onsite mentorship sessions at a time that
                     works for both mentor and mentee.
@@ -339,9 +359,7 @@ const Mentorship = () => {
                     style={{ backgroundColor: "#E6C72E" }}
                   >
                     <ArrowRight
-                      className={`w-4 h-4 sm:w-5 sm:h-5 text-white transition-transform duration-300 ${
-                        hoveredCard === "schedule" ? "translate-x-1" : ""
-                      }`}
+                      className="w-4 h-4 sm:w-5 sm:h-5 text-white"
                       strokeWidth={3}
                     />
                   </div>
@@ -442,11 +460,15 @@ const Mentorship = () => {
                         </h3>
                         <div className="flex items-center gap-2 text-sm text-gray-600 mb-2">
                           <Flag className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                          <span className="text-xs sm:text-sm">{mentor.role}</span>
+                          <span className="text-xs sm:text-sm">
+                            {mentor.role}
+                          </span>
                         </div>
                         <div className="flex items-center gap-2 text-sm text-gray-600 mb-3">
                           <Users className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                          <span className="text-xs sm:text-sm">{mentor.sessions}</span>
+                          <span className="text-xs sm:text-sm">
+                            {mentor.sessions}
+                          </span>
                         </div>
                         <div className="pt-3 border-t border-gray-200">
                           <div className="text-xs text-gray-500 mb-1">
@@ -491,7 +513,9 @@ const Mentorship = () => {
                     className="bg-white p-5 sm:p-6 rounded-xl sm:rounded-2xl border-2"
                     style={{ borderColor: "#E6C72E" }}
                   >
-                    <h3 className="font-bold text-base sm:text-lg mb-2 sm:mb-3">Career Growth</h3>
+                    <h3 className="font-bold text-base sm:text-lg mb-2 sm:mb-3">
+                      Career Growth
+                    </h3>
                     <p className="text-gray-700 leading-relaxed text-sm">
                       Receive personalized guidance from experienced
                       professionals who can help you navigate career decisions,
@@ -520,7 +544,9 @@ const Mentorship = () => {
                     className="bg-white p-5 sm:p-6 rounded-xl sm:rounded-2xl border-2"
                     style={{ borderColor: "#E6C72E" }}
                   >
-                    <h3 className="font-bold text-base sm:text-lg mb-2 sm:mb-3">Give Back</h3>
+                    <h3 className="font-bold text-base sm:text-lg mb-2 sm:mb-3">
+                      Give Back
+                    </h3>
                     <p className="text-gray-700 leading-relaxed text-sm">
                       Make a positive impact by supporting interns, junior
                       members, and community initiatives through mentorship,
