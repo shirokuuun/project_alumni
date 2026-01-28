@@ -13,12 +13,12 @@ import {
   Menu,
   X,
 } from "lucide-react";
-import hsiLogo from "../assets/hsi.png";
-import billGatesImg from "../assets/billGates.jpg";
-import elonMuskImg from "../assets/elonMusk.jpg";
-import satyaImg from "../assets/satya.jpg";
-import sundarImg from "../assets/sundar.jpg";
-import timCookImg from "../assets/timCook.jpg";
+import hsiLogo from "../../assets/hsi.png";
+import billGatesImg from "../../assets/billGates.jpg";
+import elonMuskImg from "../../assets/elonMusk.jpg";
+import satyaImg from "../../assets/satya.jpg";
+import sundarImg from "../../assets/sundar.jpg";
+import timCookImg from "../../assets/timCook.jpg";
 import { Link } from "react-router-dom";
 
 const MentorFinderUI = () => {
