@@ -13,7 +13,7 @@ import {
   Menu,
   X,
 } from "lucide-react";
-import hsiLogo from "../assets/hsi.png";
+import hsiLogo from "../../assets/hsi.png";
 import { Link } from "react-router-dom";
 
 const MentorFinderUI = () => {

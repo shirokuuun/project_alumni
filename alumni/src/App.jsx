@@ -2,8 +2,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./index.css";
 
 // Your imports
-import Mentorship from "./pages/Mentorship";
-import MentorFinderUI from "./pages/MentorFinder";
+import Mentorship from "./pages/mentorship/Mentorship.jsx";
+import MentorFinderUI from "./pages/mentor-finder/MentorFinder.jsx";
 
 // Collaborator's imports
 import MentorSignUp from "./pages/mentor-signup/Mentor.jsx";

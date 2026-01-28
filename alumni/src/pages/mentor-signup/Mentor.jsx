@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-// Ensure you have this user image or use a placeholder
 import userImage from "../../assets/user.svg"; 
 
 // Data List
@@ -114,7 +113,7 @@ export default function MentorSignUp() {
               {/* User Profile Header */}
               <div className="flex items-center gap-4 mb-8 bg-gray-50 p-4 rounded-lg border border-gray-300">
                 <img 
-                  src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&h=150&fit=crop" 
+                  src={userImage}
                   alt="Profile" 
                   className="w-16 h-16 rounded-full object-cover border-2 border-white shadow-md"
                 />
