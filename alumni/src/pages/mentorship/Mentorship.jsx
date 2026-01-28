@@ -181,6 +181,14 @@ const Mentorship = () => {
         <div className="text-white font-semibold text-sm sm:text-base">
           NAVBAR PLACEHOLDER
         </div>
+
+        {/* --- TEMPORARY BUTTON ADDED HERE --- */}
+        <button
+          onClick={() => navigate("/volunteerPrograms")}
+          className="bg-white text-yellow-800 hover:bg-gray-100 px-4 py-2 rounded-lg text-xs sm:text-sm font-bold shadow-md transition-all duration-300"
+        >
+          Volunteer Programs
+        </button>
       </div>
 
       <div className="flex flex-col lg:flex-row">
@@ -264,7 +272,7 @@ const Mentorship = () => {
                 {/* Be a Mentor */}
                 <div
                   className="bg-white p-5 sm:p-6 rounded-xl sm:rounded-2xl border-2 border-gray-200 shadow-sm cursor-pointer transition-all duration-300 hover:shadow-lg hover:scale-105 hover:border-gray-400"
-                  onClick={() => handleCardClick("/becomeMentor")}
+                  onClick={() => handleCardClick("/BecomeMentor")}
                   onMouseEnter={() => setHoveredCard("find")}
                   onMouseLeave={() => setHoveredCard(null)}
                 >
@@ -276,7 +284,9 @@ const Mentorship = () => {
                     HSI community by mentoring interns and alumni.
                   </p>
                   <div
-                    className="w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center"
+                    className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
+                      hoveredCard === "find" ? "scale-110" : ""
+                    }`}
                     style={{ backgroundColor: "#E6C72E" }}
                   >
                     <ArrowRight
@@ -317,7 +327,7 @@ const Mentorship = () => {
                 <div
                   className="bg-white p-5 sm:p-6 rounded-xl sm:rounded-2xl border-2 border-gray-200 shadow-sm cursor-pointer transition-all duration-300 hover:shadow-lg hover:scale-105 hover:border-gray-400"
                   onClick={() => handleCardClick("/finder")}
-                  onMouseEnter={() => setHoveredCard("schedule")}
+                  onMouseEnter={() => setHoveredCard("find")}
                   onMouseLeave={() => setHoveredCard(null)}
                 >
                   <h3 className="font-bold text-base sm:text-lg mb-2 sm:mb-3">
@@ -328,7 +338,9 @@ const Mentorship = () => {
                     volunteer or speaker.
                   </p>
                   <div
-                    className="w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center"
+                    className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
+                      hoveredCard === "find" ? "scale-110" : ""
+                    }`}
                     style={{ backgroundColor: "#E6C72E" }}
                   >
                     <ArrowRight
@@ -412,7 +424,7 @@ const Mentorship = () => {
                   {duplicatedMentors.map((mentor, index) => (
                     <div
                       key={index}
-                      className="min-w-[280px] sm:min-w-[300px] max-w-[280px] sm:max-w-[300px] flex-shrink-0 bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-sm border-2 border-gray-200 hover:ring-4 hover:ring-blue-400 transition-all cursor-pointer relative"
+                      className="min-w-70 sm:min-w-75 max-w-70 sm:max-w-75 shrink-0 bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-sm border-2 border-gray-200 hover:ring-4 hover:ring-blue-400 transition-all cursor-pointer relative"
                       onClick={handleMentorClick}
                       onMouseEnter={() => setHoveredMentor(index)}
                       onMouseLeave={() => setHoveredMentor(null)}

@@ -6,6 +6,7 @@ import MentorFinderUI from "./pages/mentor-finder/MentorFinder.jsx";
 import MentorSignUp from "./pages/mentor-signup/Mentor.jsx";
 import RequestMentorship from "./pages/request-page/request-form.jsx";
 import BecomeMentor from "./pages/be-a-mentor/becomeMentor.jsx";
+import VolunteerPrograms from "../volunteer-programs/VolunteerPrograms.jsx";
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
         <Route path="/program" element={<MentorSignUp />} />
 
         <Route path="/request" element={<RequestMentorship />} />
+
+        <Route path="/volunteerPrograms" element={<VolunteerPrograms />} />
       </Routes>
     </Router>
   );
