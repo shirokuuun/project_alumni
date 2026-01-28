@@ -404,7 +404,7 @@ const VolunteerPrograms = () => {
           </div>
         )}
         {(program.id === 6 || program.id === 7) && (
-          <div className="relative w-full h-full bg-gradient-to-br from-orange-300 to-orange-400 flex items-center justify-center">
+          <div className="relative w-full h-full bg-linear-to-br from-orange-300 to-orange-400 flex items-center justify-center">
             <div className="text-white text-4xl font-bold">{program.type.toUpperCase()}</div>
           </div>
         )}
@@ -566,7 +566,7 @@ const VolunteerPrograms = () => {
                     <button
                       key={pageNum}
                       onClick={() => setCurrentPage(pageNum)}
-                      className={`min-w-[40px] px-3 py-2 rounded-lg transition-all duration-200 font-medium text-sm hover:scale-110 ${
+                      className={`min-w-10 px-3 py-2 rounded-lg transition-all duration-200 font-medium text-sm hover:scale-110 ${
                         currentPage === pageNum
                           ? 'bg-gray-800 text-white'
                           : 'bg-gray-100 hover:bg-gray-300 text-gray-700'
@@ -582,7 +582,7 @@ const VolunteerPrograms = () => {
                     <span className="px-2 text-gray-600 font-medium">..</span>
                     <button
                       onClick={() => setCurrentPage(totalPages)}
-                      className={`min-w-[40px] px-3 py-2 rounded-lg transition-all duration-200 font-medium text-sm hover:scale-110 ${
+                      className={`min-w-10 px-3 py-2 rounded-lg transition-all duration-200 font-medium text-sm hover:scale-110 ${
                         currentPage === totalPages
                           ? 'bg-gray-800 text-white'
                           : 'bg-gray-100 hover:bg-gray-300 text-gray-700'

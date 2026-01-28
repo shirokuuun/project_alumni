@@ -402,7 +402,7 @@ const Mentorship = () => {
                   {duplicatedMentors.map((mentor, index) => (
                     <div
                       key={index}
-                      className="min-w-[280px] sm:min-w-[300px] max-w-[280px] sm:max-w-[300px] flex-shrink-0 bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-sm border-2 border-gray-200 hover:ring-4 hover:ring-blue-400 transition-all cursor-pointer relative"
+                      className="min-w-70 sm:min-w-75 max-w-70 sm:max-w-75 shrink-0 bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-sm border-2 border-gray-200 hover:ring-4 hover:ring-blue-400 transition-all cursor-pointer relative"
                       onClick={handleMentorClick}
                       onMouseEnter={() => setHoveredMentor(index)}
                       onMouseLeave={() => setHoveredMentor(null)}
