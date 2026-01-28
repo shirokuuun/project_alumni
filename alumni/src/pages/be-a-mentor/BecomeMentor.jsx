@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   Search,
   ChevronDown,
@@ -380,10 +381,14 @@ const BecomeMentor = () => {
                 generation of HSI professionals and make a lasting impact on
                 their careers.
               </p>
-              <button className="px-10 py-3.5 bg-yellow-600 hover:bg-yellow-700 text-white text-sm font-semibold rounded-lg transition-all hover:shadow-lg hover:scale-105 transform inline-flex items-center gap-2">
+
+              <Link
+                to="/program"
+                className="px-10 py-3.5 bg-yellow-600 hover:bg-yellow-700 text-white text-sm font-semibold rounded-lg transition-all hover:shadow-lg hover:scale-105 transform inline-flex items-center gap-2"
+              >
                 <Users className="w-4 h-4" />
                 Become a Mentor
-              </button>
+              </Link>
 
               <div className="mt-6 pt-6 border-t border-gray-200">
                 <p className="text-xs text-gray-500">

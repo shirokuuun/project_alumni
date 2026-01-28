@@ -435,13 +435,6 @@ const VolunteerPrograms = () => {
       {/* Navbar */}
       <div className="h-14 sm:h-16 bg-yellow-700 flex items-center justify-between px-4 sm:px-6">
         <div className="text-white font-semibold text-sm sm:text-base">NAVBAR PLACEHOLDER</div>
-        
-        <button
-          onClick={() => navigate("/")}
-          className="bg-white text-yellow-800 hover:bg-gray-100 px-4 py-2 rounded-lg text-xs sm:text-sm font-bold shadow-md transition-all duration-300"
-        >
-          Landing Page
-        </button>
       </div>
 
       <div className="flex flex-col lg:flex-row">

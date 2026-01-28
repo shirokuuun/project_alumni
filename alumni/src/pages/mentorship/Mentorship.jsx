@@ -14,6 +14,7 @@ const Mentorship = () => {
   const [hoveredMentor, setHoveredMentor] = useState(null);
   const [hoveredCard, setHoveredCard] = useState(null);
   const [visibleCards, setVisibleCards] = useState(4);
+  const [isInitialized, setIsInitialized] = useState(false);
 
   const mentors = [
     {
@@ -97,14 +98,19 @@ const Mentorship = () => {
     return () => window.removeEventListener("resize", updateVisibleCards);
   }, []);
 
-  // Initialize scroll position to middle section
+  // Initialize scroll position to middle section ONCE without visible animation
   useEffect(() => {
-    if (scrollContainerRef.current) {
+    if (scrollContainerRef.current && !isInitialized) {
       const container = scrollContainerRef.current;
-      const middlePosition = container.scrollWidth / 3;
-      container.scrollLeft = middlePosition;
+      // Use requestAnimationFrame to ensure DOM is fully rendered
+      requestAnimationFrame(() => {
+        const middlePosition = container.scrollWidth / 3;
+        // Set position directly without smooth scrolling to prevent visible movement
+        container.scrollLeft = middlePosition;
+        setIsInitialized(true);
+      });
     }
-  }, []);
+  }, [isInitialized]);
 
   // Handle carousel scroll with infinite loop - RESPONSIVE
   const handleScroll = (direction) => {
@@ -181,14 +187,6 @@ const Mentorship = () => {
         <div className="text-white font-semibold text-sm sm:text-base">
           NAVBAR PLACEHOLDER
         </div>
-
-        {/* --- TEMPORARY BUTTON ADDED HERE --- */}
-        <button
-          onClick={() => navigate("/volunteerPrograms")}
-          className="bg-white text-yellow-800 hover:bg-gray-100 px-4 py-2 rounded-lg text-xs sm:text-sm font-bold shadow-md transition-all duration-300"
-        >
-          Volunteer Programs
-        </button>
       </div>
 
       <div className="flex flex-col lg:flex-row">
@@ -326,7 +324,7 @@ const Mentorship = () => {
                 {/* Volunteer & Speak */}
                 <div
                   className="bg-white p-5 sm:p-6 rounded-xl sm:rounded-2xl border-2 border-gray-200 shadow-sm cursor-pointer transition-all duration-300 hover:shadow-lg hover:scale-105 hover:border-gray-400"
-                  onClick={() => handleCardClick("/finder")}
+                  onClick={() => handleCardClick("/VolunteerPrograms")}
                   onMouseEnter={() => setHoveredCard("find")}
                   onMouseLeave={() => setHoveredCard(null)}
                 >
@@ -413,7 +411,7 @@ const Mentorship = () => {
               <div className="relative overflow-hidden">
                 <div
                   ref={scrollContainerRef}
-                  className="flex gap-4 sm:gap-6 overflow-x-auto scrollbar-hide scroll-smooth"
+                  className="flex gap-4 sm:gap-6 overflow-x-auto scrollbar-hide"
                   style={{
                     scrollbarWidth: "none",
                     msOverflowStyle: "none",
@@ -421,7 +419,23 @@ const Mentorship = () => {
                     maxWidth: `calc(300px * ${visibleCards} + 24px * ${visibleCards - 1})`,
                   }}
                 >
-                  {duplicatedMentors.map((mentor, index) => (
+                  {duplicatedMentors.map((mentor, index) => {
+                    // Map mentor names to appropriate professional images
+                    const getMentorImage = (name) => {
+                      const imageMap = {
+                        "Bill Gates": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=faces",
+                        "Elon Musk": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=faces",
+                        "Satya Nadella": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300&h=300&fit=crop&crop=faces",
+                        "Sundar Pichai": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=300&fit=crop&crop=faces",
+                        "Tim Cook": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=300&h=300&fit=crop&crop=faces",
+                        "Mark Zuckerberg": "https://images.unsplash.com/photo-1463453091185-61582044d556?w=300&h=300&fit=crop&crop=faces",
+                        "Jeff Bezos": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=300&h=300&fit=crop&crop=faces",
+                        "Jensen Huang": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=300&fit=crop&crop=faces"
+                      };
+                      return imageMap[name] || "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=faces";
+                    };
+
+                    return (
                     <div
                       key={index}
                       className="min-w-70 sm:min-w-75 max-w-70 sm:max-w-75 shrink-0 bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-sm border-2 border-gray-200 hover:ring-4 hover:ring-blue-400 transition-all cursor-pointer relative"
@@ -431,7 +445,7 @@ const Mentorship = () => {
                     >
                       <div className="relative">
                         <img
-                          src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=300&fit=crop&crop=faces"
+                          src={getMentorImage(mentor.name)}
                           alt={mentor.name}
                           className="w-full h-48 sm:h-56 object-cover"
                         />
@@ -492,7 +506,8 @@ const Mentorship = () => {
                         </div>
                       </div>
                     </div>
-                  ))}
+                  );
+                  })}
                 </div>
               </div>
             </div>

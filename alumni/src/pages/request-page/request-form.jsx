@@ -22,11 +22,6 @@ export default function RequestMentorship() {
         {/* Header */}
         <header className="h-16 bg-[#787130] flex items-center justify-between px-4 md:px-8 shadow-md">
           {/* TEMPORARY BUTTON */}
-          <Link to="/program">
-            <button className="px-4 py-2 bg-white text-[#787130] text-sm font-bold rounded-lg shadow-sm hover:bg-yellow-50 transition">
-              TEMP: View Mentorship Sign up
-            </button>
-          </Link>
         </header>
 
         {/* Main Content */}

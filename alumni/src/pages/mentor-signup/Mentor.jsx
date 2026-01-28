@@ -104,11 +104,7 @@ export default function MentorSignUp() {
       <div className="flex-1 flex flex-col min-w-0">
         {/* Header */}
         <header className="h-16 bg-[#787130] flex items-center justify-between px-4 md:px-8 shadow-md">
-          <Link to="/request">
-            <button className="px-4 py-2 bg-white text-[#787130] text-sm font-bold rounded-lg shadow-sm hover:bg-yellow-50 transition">
-              TEMP: Back to Mentorship Site
-            </button>
-          </Link>
+
         </header>
 
         {/* Main Scrollable Content */}
