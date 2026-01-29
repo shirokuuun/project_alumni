@@ -2,18 +2,9 @@ import React, { useState, useRef, useEffect } from "react";
 import {
   Search,
   ChevronDown,
-  User,
-  Users,
-  FileText,
-  Trophy,
-  Calendar,
-  Bell,
   ChevronLeft,
   ChevronRight,
-  Menu,
-  X,
 } from "lucide-react";
-import hsiLogo from "../../assets/hsi.png";
 import billGatesImg from "../../assets/billGates.jpg";
 import elonMuskImg from "../../assets/elonMusk.jpg";
 import satyaImg from "../../assets/satya.jpg";
@@ -21,9 +12,7 @@ import sundarImg from "../../assets/sundar.jpg";
 import timCookImg from "../../assets/timCook.jpg";
 import { Link } from "react-router-dom";
 
-const MentorFinderUI = () => {
-  const [activeNav, setActiveNav] = useState("Mentorship & Volunteer Programs");
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+const MentorList = () => {
 
   // Filter states
   const [searchQuery, setSearchQuery] = useState("");
@@ -203,176 +192,12 @@ const MentorFinderUI = () => {
 
   const filteredMentors = getFilteredMentors();
 
-  const navItems = [
-    {
-      icon: <div className="w-4 h-4 bg-gray-400 rounded" />,
-      label: "Dashboard",
-    },
-    {
-      icon: <Users className="w-4 h-4" />,
-      label: "Directory & Networking",
-      hasSubmenu: true,
-    },
-    {
-      icon: <Trophy className="w-4 h-4" />,
-      label: "Career & Job Opportunities",
-    },
-    { icon: <Bell className="w-4 h-4" />, label: "Networking & Leadership" },
-    {
-      icon: <Trophy className="w-4 h-4" />,
-      label: "Achievements & Recognition",
-    },
-    {
-      icon: <Calendar className="w-4 h-4" />,
-      label: "Events & Community Engagement",
-    },
-    { icon: <Users className="w-4 h-4" />, label: "Alumni Connections" },
-    {
-      icon: <Users className="w-4 h-4" />,
-      label: "Mentorship & Volunteer Programs",
-      active: true,
-    },
-    { icon: <FileText className="w-4 h-4" />, label: "Documents & Records" },
-  ];
-
   return (
-    <div className="flex h-screen bg-gray-100 overflow-hidden">
-      {/* Mobile Overlay */}
-      {sidebarOpen && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
-          onClick={() => setSidebarOpen(false)}
-        />
-      )}
-
-      {/* Sidebar */}
-      <div
-        className={`fixed lg:static inset-y-0 left-0 w-64 lg:w-52 bg-[#3a3a3a] text-white flex flex-col z-50 transform transition-transform duration-300 ease-in-out ${
-          sidebarOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
-        }`}
-      >
-        {/* Logo */}
-        <div className="h-15 bg-[#4a4a3a] flex items-center px-4 border-r border-gray-600 shrink-0">
-          <div className="flex items-center gap-2">
-            <img className="w-12 h-auto" src={hsiLogo} alt="Logo" />
-          </div>
-          <button className="ml-auto text-gray-400 hover:text-white lg:block hidden">
-            <ChevronLeft className="w-4 h-4" />
-          </button>
-          <button
-            className="ml-auto text-gray-400 hover:text-white lg:hidden"
-            onClick={() => setSidebarOpen(false)}
-          >
-            <X className="w-5 h-5" />
-          </button>
-        </div>
-
-        {/* Menu Section */}
-        <div className="px-3 py-2 overflow-y-auto">
-          <div className="text-xs text-gray-400 font-semibold mb-2 px-2">
-            MENU
-          </div>
-          <nav className="space-y-1">
-            {navItems.slice(0, 7).map((item, idx) => (
-              <button
-                key={idx}
-                onClick={() => {
-                  setActiveNav(item.label);
-                  setSidebarOpen(false);
-                }}
-                className={`w-full flex items-center gap-3 px-3 py-2 rounded text-sm ${
-                  activeNav === item.label ? "bg-gray-700" : "hover:bg-gray-700"
-                }`}
-              >
-                {item.icon}
-                <span className="flex-1 text-left text-xs">{item.label}</span>
-                {item.hasSubmenu && <ChevronDown className="w-3 h-3" />}
-              </button>
-            ))}
-          </nav>
-        </div>
-
-        {/* Highlighted Menu Item */}
-        <div className="px-3 pb-2">
-          <button
-            onClick={() => {
-              setActiveNav("Mentorship & Volunteer Programs");
-              setSidebarOpen(false);
-            }}
-            className="w-full flex items-center gap-3 px-3 py-2 rounded text-sm bg-yellow-600 hover:bg-yellow-700"
-          >
-            <Users className="w-4 h-4" />
-            <span className="flex-1 text-left text-xs font-medium">
-              Mentorship & Volunteer Programs
-            </span>
-          </button>
-        </div>
-
-        <div className="px-3 pb-2">
-          <button
-            className="w-full flex items-center gap-3 px-3 py-2 rounded text-sm hover:bg-gray-700"
-            onClick={() => setSidebarOpen(false)}
-          >
-            <FileText className="w-4 h-4" />
-            <span className="flex-1 text-left text-xs">
-              Documents & Records
-            </span>
-          </button>
-        </div>
-
-        {/* Other Section */}
-        <div className="px-3 mt-4">
-          <div className="text-xs text-gray-400 font-semibold mb-2 px-2">
-            OTHER
-          </div>
-          <button className="w-full flex items-center gap-3 px-3 py-2 rounded text-sm hover:bg-gray-700">
-            <User className="w-4 h-4" />
-            <span className="flex-1 text-left text-xs">Profile</span>
-          </button>
-        </div>
-      </div>
-
-      {/* Main Content */}
-      <div className="flex-1 flex flex-col">
-        {/* Top Bar */}
-        <div className="h-15 bg-[#7a7447] flex items-center justify-between px-4 lg:px-6 border-b border-gray-600 shrink-0">
-          <div className="flex items-center gap-3 flex-1">
-            {/* Mobile Menu Button */}
-            <button
-              className="lg:hidden text-white hover:text-gray-200"
-              onClick={() => setSidebarOpen(true)}
-            >
-              <Menu className="w-5 h-5" />
-            </button>
-
-            <div className="relative flex-1 max-w-md">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-500" />
-              <input
-                type="text"
-                placeholder="Search"
-                className="w-full pl-10 pr-4 py-1.5 rounded bg-white text-sm focus:outline-none focus:ring-2 focus:ring-yellow-500"
-              />
-            </div>
-          </div>
-          <div className="flex items-center gap-3">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden shrink-0">
-                <img src="" alt="User" className="w-full h-full object-cover" />
-              </div>
-              <div className="text-white hidden sm:block">
-                <div className="text-xs font-semibold">MARK ZUCKERBERG</div>
-                <div className="text-xs text-gray-300">Admin</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Content Area */}
-        <div className="flex-1 overflow-auto p-8">
-          <div>
-            <h1 className="text-3xl font-semibold text-gray-800 mb-2">
-              Find a Mentor
-            </h1>
+    <div className="w-full">
+      <div>
+        <h1 className="text-3xl font-semibold text-gray-800 mb-2">
+          Find a Mentor
+        </h1>
             <p className="text-sm text-gray-600 mb-6">
               Browse experienced alumni mentors and request mentors based on
               your goals, skills and availability
@@ -569,7 +394,7 @@ const MentorFinderUI = () => {
                     </div>
 
                     <div className="flex flex-col sm:flex-row gap-2">
-                      <Link to="/request" className="flex-1">
+                      <Link to="/requestMentorship" className="flex-1">
                         <button className="w-full py-2 px-3 bg-yellow-600 hover:bg-yellow-700 text-white text-sm font-medium rounded whitespace-nowrap">
                           Request Mentorship
                         </button>
@@ -612,11 +437,9 @@ const MentorFinderUI = () => {
                 </button>
               </div>
             )}
-          </div>
-        </div>
       </div>
     </div>
   );
 };
 
-export default MentorFinderUI;
+export default MentorList;

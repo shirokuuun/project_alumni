@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import flagIcon from "../../assets/flag.svg";
 import clockIcon from "../../assets/clock.svg";
 import refreshIcon from "../../assets/loading.svg";
 import star from "../../assets/star.svg";
 import user from "../../assets/user.svg";
+import flagIcon from "../../assets/flag.svg";
 
 export default function RequestMentorship() {
   const [mentorshipGoal, setMentorshipGoal] = useState("");
@@ -13,19 +12,7 @@ export default function RequestMentorship() {
   const [userRole, setUserRole] = useState("");
 
   return (
-    <div className="flex min-h-screen bg-gray-100 font-sans">
-      {/* Sidebar */}
-      <aside className="hidden md:block w-64 bg-[#52525b] shrink-0"></aside>
-
-      {/* Main Content Wrapper */}
-      <div className="flex-1 flex flex-col min-w-0">
-        {/* Header */}
-        <header className="h-16 bg-[#787130] flex items-center justify-between px-4 md:px-8 shadow-md">
-          {/* TEMPORARY BUTTON */}
-        </header>
-
-        {/* Main Content */}
-        <main className="flex-1 p-4 md:p-8 overflow-y-auto">
+    <div className="w-full">
           <h1 className="text-3xl font-bold text-gray-900">
             Request Mentorship
           </h1>
@@ -312,8 +299,6 @@ export default function RequestMentorship() {
               </div>
             </div>
           </div>
-        </main>
-      </div>
     </div>
   );
 }

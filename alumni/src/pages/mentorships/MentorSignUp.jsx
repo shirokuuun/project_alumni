@@ -96,19 +96,7 @@ export default function MentorSignUp() {
   };
 
   return (
-    <div className="flex min-h-screen bg-gray-100 font-sans">
-      {/* Sidebar */}
-      <aside className="hidden md:block w-64 bg-[#52525b] flex-shrink-0"></aside>
-
-      {/* Main Content Wrapper */}
-      <div className="flex-1 flex flex-col min-w-0">
-        {/* Header */}
-        <header className="h-16 bg-[#787130] flex items-center justify-between px-4 md:px-8 shadow-md">
-
-        </header>
-
-        {/* Main Scrollable Content */}
-        <main className="flex-1 p-6 md:p-10 overflow-y-auto">
+    <div className="w-full">
           <div className="max-w-7xl mx-auto">
             {/* Page Title Section */}
             <div className="mb-8">
@@ -484,8 +472,6 @@ export default function MentorSignUp() {
               </div>
             </div>
           </div>
-        </main>
-      </div>
     </div>
   );
 }

@@ -431,21 +431,8 @@ const VolunteerPrograms = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gray-100">
-      {/* Navbar */}
-      <div className="h-14 sm:h-16 bg-yellow-700 flex items-center justify-between px-4 sm:px-6">
-        <div className="text-white font-semibold text-sm sm:text-base">NAVBAR PLACEHOLDER</div>
-      </div>
-
-      <div className="flex flex-col lg:flex-row">
-        {/* Sidebar */}
-        <div className="w-full lg:w-64 bg-gray-800 min-h-0 lg:min-h-screen">
-          <div className="text-white p-4 sm:p-6 text-sm sm:text-base">SIDEBAR PLACEHOLDER</div>
-        </div>
-
-        {/* Main Content Area */}
-        <div className="flex-1 bg-white">
-          <div className="max-w-7xl mx-auto px-8 py-10">
+    <div className="w-full">
+          <div className="max-w-7xl mx-auto">
             {/* 1ST SECTION - Header */}
             <div className="mb-12">
               <h1 className="text-4xl font-bold text-gray-900 mb-3">Volunteer Programs</h1>
@@ -596,8 +583,6 @@ const VolunteerPrograms = () => {
               </div>
             )}
           </div>
-        </div>
-      </div>
 
       {/* Modal */}
       {selectedProgram && (
