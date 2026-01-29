@@ -15,7 +15,7 @@ export default function RequestMentorship() {
   return (
     <div className="flex min-h-screen bg-gray-100 font-sans">
       {/* Sidebar */}
-      <aside className="hidden md:block w-64 bg-[#52525b] flex-shrink-0"></aside>
+      <aside className="hidden md:block w-64 bg-[#52525b] shrink-0"></aside>
 
       {/* Main Content Wrapper */}
       <div className="flex-1 flex flex-col min-w-0">
@@ -47,7 +47,7 @@ export default function RequestMentorship() {
                   <img
                     src={user}
                     alt="User Icon"
-                    className="w-24 h-24 rounded-full object-cover border-4 border-gray-100 flex-shrink-0"
+                    className="w-24 h-24 rounded-full object-cover border-4 border-gray-100 shrink-0"
                   />
                   <div className="flex-1 w-full">
                     <h3 className="text-2xl font-bold text-gray-900">
@@ -201,7 +201,7 @@ export default function RequestMentorship() {
                       Message to Mentor
                     </label>
                     <textarea
-                      className="w-full p-3 bg-gray-100 rounded-lg text-sm border border-gray-300 focus:border-yellow-500 outline-none text-gray-700 h-full min-h-[120px]"
+                      className="w-full p-3 bg-gray-100 rounded-lg text-sm border border-gray-300 focus:border-yellow-500 outline-none text-gray-700 h-full min-h-30"
                       placeholder="Hi! I'm an HSI alumni looking to improve my web development skills. I'd like guidance on building a portfolio and preparing for interviews."
                     ></textarea>
                   </div>
@@ -304,7 +304,7 @@ export default function RequestMentorship() {
                     </label>
                     <textarea
                       rows="4"
-                      className="w-full p-3 bg-gray-100 rounded-lg text-sm border border-gray-300 focus:border-yellow-500 outline-none text-gray-700 min-h-[200px]"
+                      className="w-full p-3 bg-gray-100 rounded-lg text-sm border border-gray-300 focus:border-yellow-500 outline-none text-gray-700 min-h-50"
                       placeholder="Any specific questions or expectations you'd like the mentor to know."
                     ></textarea>
                   </div>
